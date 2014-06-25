@@ -1,1 +1,8 @@
-reg add "hkcu\software\microsoft\command processor" /v Autorun /t reg_sz /d %USERPROFILE%\Documents\GitHub\cmd_aliases\aliases.cmd
+@ECHO OFF
+
+ECHO We are going to add aliases to registry
+ECHO ---------------------------------------
+
+REG ADD "HKCU\Software\Microsoft\Command Processor" /v Autorun /t REG_SZ /d %~dp0aliases.cmd
+
+PAUSE
